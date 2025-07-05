@@ -1,0 +1,28 @@
+/* src\components\Layout\MainContent\MainContent.css */
+
+.main-content {
+  margin-top: var(--header-height);
+  margin-bottom: var(--footer-height);
+  /* margin-right is now controlled by JavaScript for responsiveness */
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  background-color: var(--primary-bg);
+  /* Add smooth transition for margin changes */
+  transition: margin-right var(--transition-default);
+}
+
+.main-content-container {
+  height: 100%;
+  display: flex;
+  background-color: var(--primary-bg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    margin-right: 0 !important; /* Force no margin on mobile */
+  }
+  
+  .main-content-container {
+    flex-direction: column;
+  }
+}
